@@ -1,0 +1,18 @@
+# create django project
+python -m django startproject "project-name"
+
+# create django app
+python manage.py startapp "app-name"
+
+# makemigrations → To update database models 
+# (We have to run this command every time when something changes in models.py e.g. adding a new table, changing a field name, etc)
+python manage.py makemigrations
+
+# migrate → The last step to submit or sent out our table into the database server
+python manage.py migrate
+
+# Shows models of all db tables
+python manage.py inspectdb
+
+# run server
+python manage.py runserver
