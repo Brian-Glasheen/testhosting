@@ -1,0 +1,6 @@
+# init npm after installing
+npm init
+npm install create-react-app
+
+# run ui
+npm start
