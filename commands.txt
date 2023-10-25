@@ -4,14 +4,15 @@ pip install pipenv
 # Steps to run server:
 cd into root directory
 pipenv shell
+pipenv sync
 python manage.py runserver
-# install bellow dependencies if missing
 
-# neccessary installs
+# install bellow dependencies if missing
 pip install django
 pip install djangorestframework
 pip install psycopg2
 python -m pip install django-cors-headers
+
 
 
 # USEFUL COMMANDS
@@ -31,6 +32,3 @@ python manage.py migrate
 
 # Shows models of all db tables
 python manage.py inspectdb
-
-# run server
-python manage.py runserver
