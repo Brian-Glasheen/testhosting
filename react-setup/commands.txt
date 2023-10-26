@@ -1,6 +1,7 @@
 # init npm after installing
 npm init
 npm install create-react-app
+npm install axios
 
 # run ui
 npm start

@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Menu(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.TextField(blank=True, null=True)

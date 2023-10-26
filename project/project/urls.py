@@ -17,10 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-# from django.conf.urls import url
 from menu.views import *
+from inventory.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MenuView.as_view(), name='Menu'),
+    path('inventory/', InventoryView.as_view(), name='inventory'),
+    path('', MenuView.as_view(), name='menu'), # empty string corresponds to the root URL of the website
 ]
