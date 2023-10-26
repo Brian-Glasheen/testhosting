@@ -17,8 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
+# from django.conf.urls import url
+from menu.views import *
 
 urlpatterns = [
-    path("", include("menu.urls")),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('', MenuView.as_view(), name='Menu'),
 ]

@@ -1,13 +1,27 @@
 # from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Menu
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import *
+from .serializers import *
 
-def menu(request):
-    menu_items = Menu.objects.all().values().order_by('id')
-    template = loader.get_template('index.html')
-    context = {
-        'menu' : menu_items,
-    }
+class MenuView(APIView):
+    def get(self, request):
+        output = [
+            {"id": output.id,
+             "name": output.name,
+             "price": output.price,
+             "category": output.category,
+            }
+            for output in Menu.objects.all().order_by('id')
+        ]
+        
+        return Response(output)
+    
 
-    return HttpResponse(template.render(context, request))
+    def post(self, request):
+        serializer = MenuSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
