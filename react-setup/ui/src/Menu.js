@@ -34,7 +34,7 @@ function Menu() {
   }, {});
 
   return (
-    <div>
+    <div class="menu-div">
       <h1>Menu</h1>
         <div>
           <h2>Weather Information</h2>
