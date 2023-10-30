@@ -1,26 +1,11 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import ManagerView from './ManagerView';
 import './App.css';
-import './css/App.css';
-
-import Menu from './Menu.js';
-import SelfServe from './SelfServe';
-import Home from './Home';
+import Navbar from './components/Navbar';
 
 function App() {
-  // return (
-  //   <div>
-  //       <ManagerView />
-  
   return (
-    <div className="App">
-      <div><h1>im always here</h1></div>
-        <Routes>
-            <Route path='/' element={ <Home/> } />
-            <Route path='/menu' element={ <Menu/> } />
-            <Route path='/selfserve' element={ <SelfServe/> } />
-        </Routes>
+    <div>
+      <div><Navbar name='Nav'/></div>
     </div>
   );
 }
