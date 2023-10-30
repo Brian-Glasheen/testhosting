@@ -1,6 +1,5 @@
 import React from 'react';
-import {useState, useEffect } from 'react';
-import Navbar from './components/Navbar.js';
+// import {useState, useEffect } from 'react';
 //import axios from 'axios';
 import './css/ManagerView.css';
 
@@ -17,12 +16,15 @@ function ManagerView() {
   //   }).catch(err => {})
   // }, [])
 
+  const onAction = () => (
+    console.log("Hello, world!")
+  );
+
   return (
     <div>
       <h1>Manager Login</h1>
       <div className='login-box'>
-        <p>Home</p>
-        <button>Login</button>
+        <button onClick={onAction}>Login</button>
       </div>
     </div>
 

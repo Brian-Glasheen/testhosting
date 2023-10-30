@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './css/menu.css';
 
 function Menu() {
     const [jsonData, setJsonData] = useState(null);
@@ -13,8 +13,7 @@ function Menu() {
     }, []);
     
     if (!jsonData) {
-        return <div>Loading data...</div>;
-        // return ;
+        return <div className="menu-div" style={{paddingTop: 50}}>Loading data...</div>;
     }
 
   // Group the data by category
@@ -28,7 +27,7 @@ function Menu() {
   }, {});
 
   return (
-    <div class="menu-div">
+    <div className="menu-div">
       <h1>Menu</h1>
       {Object.entries(groupedData).map(([category, items]) => (
         <div key={category}>
