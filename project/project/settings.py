@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'menu',
     'api',
-    'rest_framework',
-    'corsheaders',
-    'menu',
     'inventory',
 ]
 
