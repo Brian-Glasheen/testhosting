@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.topnav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  background-color: #333;
+  width: 100%;
+}
+.topnav a {
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Trebuchet MS, sans-serif;
+}
+.topnav a:hover {
+  background-color: rgb(172, 183, 185);
+  color: black;
+}
+.topnav a.active {
+  color: #fe9767;
+}
