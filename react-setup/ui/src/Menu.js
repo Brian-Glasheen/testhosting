@@ -1,6 +1,6 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './css/menu.css';
 
 const weatherStyle = {
   marginTop: '20px',
@@ -27,8 +27,7 @@ function Menu() {
     }, []);
     
     if (!jsonData) {
-        return <div>Loading data...</div>;
-        // return ;
+        return <div className="menu-div" style={{paddingTop: 50}}>Loading data...</div>;
     }
 
 
@@ -43,7 +42,7 @@ function Menu() {
   }, {});
 
   return (
-    <div class="menu-div">
+    <div className="menu-div">
       <h1>Menu</h1>
         <div style = {weatherStyle}>
           <h2>Weather Information</h2>
