@@ -1,5 +1,6 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function Menu() {
     const [jsonData, setJsonData] = useState(null);
@@ -46,6 +47,6 @@ function Menu() {
     </div>
   );
 
-    }
+}
 
 export default Menu;

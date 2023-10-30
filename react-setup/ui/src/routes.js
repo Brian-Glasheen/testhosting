@@ -1,13 +1,16 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
-import App from './App';
-import ManagerMenuView from './ManagerMenuView';
-
+import Menu from './Menu.js';
+import SelfServe from './SelfServe';
+import Home from './Home';
+import ManagerView from './ManagerView.js';
 
 export default (
-  <Route path="/" component={ManagerMenuView}>
-    {/* <IndexRoute component={ManagerMenuView} /> */}
-    <Route path="/inventory" component={App} />
-  </Route>
+  <Routes>
+    <Route path='/' element={ <Home/> } />
+    <Route path='/menu' element={ <Menu/> } />
+    <Route path='/selfserve' element={ <SelfServe/> } />
+    <Route path='/manager' element={ <ManagerView/> }/>
+  </Routes>
 );
