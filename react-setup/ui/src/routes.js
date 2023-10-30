@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import App from './App';
-import ManagerMenuView from './ManagerMenuView';
+import ManagerMenuView from './ManagerView';
 
 
 export default (

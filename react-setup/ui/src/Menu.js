@@ -1,5 +1,6 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function Menu() {
     const [jsonData, setJsonData] = useState(null);
@@ -27,7 +28,7 @@ function Menu() {
   }, {});
 
   return (
-    <div>
+    <div className="App">
       <h1>Menu</h1>
       {Object.entries(groupedData).map(([category, items]) => (
         <div key={category}>
@@ -46,6 +47,6 @@ function Menu() {
     </div>
   );
 
-    }
+}
 
 export default Menu;
