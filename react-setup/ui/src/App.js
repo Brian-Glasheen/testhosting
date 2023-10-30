@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 // import logo from './logo.svg';
 import './App.css';
 import Menu from './Menu.js';
-=======
 import React from 'react';
 import {useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './css/App.css';
->>>>>>> fb279ec3c647263f346315549a7b22d06579ce1c
 
 function App() {
 
@@ -24,22 +21,8 @@ function App() {
   }, [])
 
   return (
-<<<<<<< HEAD
     <div className="App">
         <Menu />
-=======
-    <div>
-      {/* <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="index.html">Menu</a>
-      </div> */}
-      {/* <Link to="/">Menu view</Link> */}
-      {details.map((output, id) => (
-        <div key={id}>
-          <h3>{output.ingredient_id} | {output.ingredient_name}</h3>
-        </div>
-      ))}
->>>>>>> fb279ec3c647263f346315549a7b22d06579ce1c
     </div>
 
   );
