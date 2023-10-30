@@ -1,5 +1,6 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 const weatherStyle = {
   marginTop: '20px',
@@ -68,6 +69,6 @@ function Menu() {
     </div>
   );
 
-    }
+}
 
 export default Menu;
