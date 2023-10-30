@@ -1,30 +1,25 @@
 // import logo from './logo.svg';
 import './App.css';
-import Menu from './Menu.js';
-import React from 'react';
-import {useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
 import './css/App.css';
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import Menu from './Menu.js';
+import SelfServe from './SelfServe';
+import Home from './Home';
 
 function App() {
 
-  const [details, setDetails] = useState([]);
-
-  useEffect(() => {
-    let data;
-    axios.get('http://localhost:8000/inventory/').then(response => {
-      // console.log(response);
-      data = response.data;
-      setDetails(data);
-    }).catch(err => {})
-  }, [])
-
   return (
     <div className="App">
-        <Menu />
+      <div><h1>im always here</h1></div>
+        <Routes>
+            <Route path='/' element={ <Home/> } />
+            <Route path='/menu' element={ <Menu/> } />
+            <Route path='/selfserve' element={ <SelfServe/> } />
+        </Routes>
     </div>
-
   );
 }
 
