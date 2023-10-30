@@ -1,27 +1,36 @@
 // import React from 'react';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+const weatherStyle = {
+  marginTop: '20px',
+  padding: '10px',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  backgroundColor: '#f0f0f0',
+};
 
 function Menu() {
     const [jsonData, setJsonData] = useState(null);
     const [weatherData, setWeatherData] = useState(null);
-    const weatherApiKey = '1927c85cb52bc4610c023263a7b8a293';
     
     useEffect(() => {
         fetch('http://127.0.0.1:8000/api/menus/?format=json') // Replace with your API URL
         .then((response) => response.json())
         .then((data) => setJsonData(data))
-        .catch((error) => console.error('Error fetching data:', error));
+        .catch((error) => console.error('Error fetching data:', error)),
 
-        axios.get(`http://api.weatherstack.com/current?access_key=${weatherApiKey}&query=College Station`)
-      .then((data) => setWeatherData(data))
-      .catch((error) => console.error('Error fetching weather data:', error));
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=College%20Station&appid=e960783c4dc87e3ab3e06ac0b23ea5dd&units=imperial')
+        .then((response) => response.json())
+        .then((data) => {setWeatherData(data); 
+        console.log('Fetched weather data:', data);}) // Add this console.log)
+        .catch((error) => console.error('Error fetching weather data:', error));
     }, []);
     
-    if (!jsonData || ! weatherData) {
+    if (!jsonData) {
         return <div>Loading data...</div>;
         // return ;
     }
+
 
   // Group the data by category
   const groupedData = jsonData.reduce((result, item) => {
@@ -36,11 +45,11 @@ function Menu() {
   return (
     <div class="menu-div">
       <h1>Menu</h1>
-        <div>
+        <div style = {weatherStyle}>
           <h2>Weather Information</h2>
-          <p>City: {weatherData.location.name}</p>
-          <p>Temperature: {weatherData.current.temperature} &deg;C</p>
-          <p>Weather: {weatherData.current.weather_descriptions[0]}</p>
+          <p>City: {weatherData.name}</p>
+          <p>Temperature: {weatherData.main.temp} &deg;F</p>
+          <p>Weather: {weatherData.weather[0].description}</p>
         </div>
       {Object.entries(groupedData).map(([category, items]) => (
         <div key={category}>
