@@ -22,8 +22,7 @@ function Menu() {
 
         fetch('https://api.openweathermap.org/data/2.5/weather?q=College%20Station&appid=e960783c4dc87e3ab3e06ac0b23ea5dd&units=imperial')
         .then((response) => response.json())
-        .then((data) => {setWeatherData(data); 
-        console.log('Fetched weather data:', data);}) // Add this console.log)
+        .then((data) => setWeatherData(data)) // Add this console.log)
         .catch((error) => console.error('Error fetching weather data:', error));
     }, []);
     
