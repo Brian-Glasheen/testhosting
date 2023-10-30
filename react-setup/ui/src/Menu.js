@@ -27,7 +27,7 @@ function Menu() {
   }, {});
 
   return (
-    <div>
+    <div class="menu-div">
       <h1>Menu</h1>
       {Object.entries(groupedData).map(([category, items]) => (
         <div key={category}>
