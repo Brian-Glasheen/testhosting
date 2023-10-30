@@ -1,6 +1,8 @@
 # init npm after installing
 npm init
 npm install create-react-app
+npm install axios
+npm install react-router-dom
 
 # run ui
 npm start

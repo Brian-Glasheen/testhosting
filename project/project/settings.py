@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,10 +35,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'corsheaders',
     'rest_framework',
     'menu',
     'api',
+=======
+    'rest_framework',
+    'corsheaders',
+    'menu',
+    'inventory',
+>>>>>>> fb279ec3c647263f346315549a7b22d06579ce1c
 ]
 
 MIDDLEWARE = [
@@ -53,14 +59,26 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework.authentication.SessionAuthentication',
+    # ),
+
+    # 'DEFAULT_MODEL_SERIALIZER_CLASS':
+    #     'rest_framework.serializers.ModelSerializer',
+
+    'DEFAULT_PERMISSION_CLASSES':
+    ('rest_framework.permissions.AllowAny', ),
+}
+
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates',
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

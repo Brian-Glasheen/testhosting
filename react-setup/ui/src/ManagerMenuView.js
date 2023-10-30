@@ -1,22 +1,15 @@
-<<<<<<< HEAD
-// import logo from './logo.svg';
-import './App.css';
-import Menu from './Menu.js';
-=======
 import React from 'react';
 import {useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './css/App.css';
->>>>>>> fb279ec3c647263f346315549a7b22d06579ce1c
 
-function App() {
+function ManagerMenuView() {
 
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
     let data;
-    axios.get('http://localhost:8000/inventory/').then(response => {
+    axios.get('http://localhost:8000/').then(response => {
       // console.log(response);
       data = response.data;
       setDetails(data);
@@ -24,27 +17,20 @@ function App() {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <div className="App">
-        <Menu />
-=======
     <div>
       {/* <div class="topnav">
         <a class="active" href="index.html">Home</a>
         <a href="index.html">Menu</a>
       </div> */}
-      {/* <Link to="/">Menu view</Link> */}
+      <link to="/inventory"></link>
       {details.map((output, id) => (
         <div key={id}>
-          <h3>{output.ingredient_id} | {output.ingredient_name}</h3>
+          <h3>{output.id} | {output.name}</h3>
         </div>
       ))}
->>>>>>> fb279ec3c647263f346315549a7b22d06579ce1c
     </div>
 
   );
 }
 
-
-
-export default App;
+export default ManagerMenuView;

@@ -23,8 +23,15 @@ from api import views
 router = routers.DefaultRouter()
 router.register(r'menus', views.MenuView, 'menu')
 
+
+    
+from menu.views import *
+from inventory.views import *
+
 urlpatterns = [
-    path("", include("menu.urls")),
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('inventory/', InventoryView.as_view(), name='inventory'),
+    path('', MenuView.as_view(), name='menu'), # empty string corresponds to the root URL of the website
+    # path("", include("menu.urls")),
+    path('api/', include(router.urls))
 ]
